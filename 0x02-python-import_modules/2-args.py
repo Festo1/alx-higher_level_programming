@@ -11,7 +11,6 @@ if __name__ == "__main__":
     elif count == 1:
         print("1 argument:")
     else:
-        print ("{} arguments":)
-    else:print("{} arguments:".format(cont))
+        print("{} arguments:".format(cont))
     for a in range(count):
         print("{}: {}".format(a + 1, sys.argv[a +1]))
