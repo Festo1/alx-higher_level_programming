@@ -1,6 +1,6 @@
 #include <Python.h>
 
-
+/* Function declarations */
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
@@ -17,14 +17,14 @@ void print_python_list(PyObject *p)
     PyListObject *list = (PyListObject *)p;
     PyVarObject *var = (PyVarObject *)p;
 
-
+	/* Get the size and allocated memory of the list */
     size = var->ob_size;
     alloc = list->allocated;
 
 
     fflush(stdout);
 
-
+	/* Print list info */
     printf("[*] Python list info\n");
     if (strcmp(p->ob_type->tp_name, "list") != 0)
     {
@@ -36,7 +36,7 @@ void print_python_list(PyObject *p)
     printf("[*] Size of the Python List = %ld\n", size);
     printf("[*] Allocated = %ld\n", alloc);
 
-
+	/* Iterate through the list elements */
     for (i = 0; i < size; i++)
     {
         type = list->ob_item[i]->ob_type->tp_name;
@@ -61,7 +61,7 @@ void print_python_bytes(PyObject *p)
 
     fflush(stdout);
 
-
+	/* Print byte object info */
     printf("[.] bytes object info\n");
     if (strcmp(p->ob_type->tp_name, "bytes") != 0)
     {
@@ -106,7 +106,7 @@ void print_python_float(PyObject *p)
 
     fflush(stdout);
 
-
+	/* Print float object info */
     printf("[.] float object info\n");
     if (strcmp(p->ob_type->tp_name, "float") != 0)
     {
