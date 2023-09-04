@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """
-defines a class Rectangle
+Defines a class Rectangle
 """
+
 
 class Rectangle:
     """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """initializing the rectangle by
+        setting the objet with width and height
+        """
         self.height = height
         self.width = width
 
@@ -37,4 +40,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
